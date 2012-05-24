@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://7c9349c3f58344ae888b26dd0adae1e6.cloudapp.net/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://7c9349c3f58344ae888b26dd0adae1e6.cloudapp.net/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://7c9349c3f58344ae888b26dd0adae1e6.cloudapp.net/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WCFServiceWebRole1" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_AddDirectoryEntry_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDirectoryEntry" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddDirectoryEntry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDirectoryEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDirectoryEntries_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDirectoryEntries" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDirectoryEntries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDirectoryEntriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDirectoryEntry_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDirectoryEntry" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDirectoryEntry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDirectoryEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RemoveDirectoryEntry_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveDirectoryEntry" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RemoveDirectoryEntry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveDirectoryEntryResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="AddDirectoryEntry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddDirectoryEntry" message="tns:IService1_AddDirectoryEntry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddDirectoryEntryResponse" message="tns:IService1_AddDirectoryEntry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDirectoryEntries">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDirectoryEntries" message="tns:IService1_GetDirectoryEntries_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDirectoryEntriesResponse" message="tns:IService1_GetDirectoryEntries_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDirectoryEntry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDirectoryEntry" message="tns:IService1_GetDirectoryEntry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDirectoryEntryResponse" message="tns:IService1_GetDirectoryEntry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveDirectoryEntry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/RemoveDirectoryEntry" message="tns:IService1_RemoveDirectoryEntry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/RemoveDirectoryEntryResponse" message="tns:IService1_RemoveDirectoryEntry_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddDirectoryEntry">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddDirectoryEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDirectoryEntries">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetDirectoryEntries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDirectoryEntry">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetDirectoryEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveDirectoryEntry">
+      <soap:operation soapAction="http://tempuri.org/IService1/RemoveDirectoryEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://7c9349c3f58344ae888b26dd0adae1e6.cloudapp.net/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
